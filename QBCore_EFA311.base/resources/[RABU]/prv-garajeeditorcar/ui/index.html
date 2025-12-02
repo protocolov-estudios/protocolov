@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garage Editor Car</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app" class="overlay hidden">
+        <div class="panel" id="panel-editor">
+            <header>
+                <h2>Editor de vehículo</h2>
+                <button id="closeBtn" class="close">✕</button>
+            </header>
+
+            <main>
+                <div class="row"><label>ID:</label> <span id="vehId"></span></div>
+                <div class="row"><label>Propietario:</label> <span id="owner"></span></div>
+                <div class="row"><label>Modelo:</label> <span id="model"></span></div>
+                <div class="row"><label>Placa actual:</label> <span id="plate_old"></span></div>
+
+                <div class="row"><label>Nueva placa:</label> <input id="plate" type="text" placeholder="Nueva placa (opcional)"></div>
+                <div class="row"><label>ID / Placa:</label> <input id="identifier" type="text" placeholder="ID o placa (si no se abrió por id)"></div>
+                <div class="row"><label>Garaje:</label> <input id="garage" type="text" placeholder="Nombre o id del garaje"></div>
+
+                <div class="row actions">
+                    <button id="saveBtn" class="btn primary">Guardar</button>
+                    <button id="cancelBtn" class="btn">Cerrar</button>
+                </div>
+            </main>
+        </div>
+        
+        <!-- panel: list of garages -->
+        <div class="panel" id="panel-list" style="display:none;">
+            <header>
+                <h2>Lista de garajes</h2>
+                <button id="closeList" class="close">✕</button>
+            </header>
+            <main id="listMain">
+                <div id="garagesList"></div>
+                <div class="row actions"><button id="closeList2" class="btn">Cerrar</button></div>
+            </main>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

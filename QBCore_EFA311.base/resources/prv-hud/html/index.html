@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protocolo V</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="logo-container">
+        <img src="./logo/logo.png" alt="Logo" id="logo">
+    </div>
+    <div id="hud-container">
+        <!-- Salud -->
+        <div class="stat-item">
+            <div class="stat-icon health-icon">❤️</div>
+            <div class="stat-bar-container">
+                <div class="stat-bar health-bar" id="health-bar"></div>
+            </div>
+        </div>
+
+        <!-- Armadura -->
+        <div class="stat-item">
+            <div class="stat-icon armor-icon">🛡️</div>
+            <div class="stat-bar-container">
+                <div class="stat-bar armor-bar" id="armor-bar"></div>
+            </div>
+        </div>
+
+        <!-- Hambre -->
+        <div class="stat-item">
+            <div class="stat-icon hunger-icon">🍔</div>
+            <div class="stat-bar-container">
+                <div class="stat-bar hunger-bar" id="hunger-bar"></div>
+            </div>
+        </div>
+
+        <!-- Sed -->
+        <div class="stat-item">
+            <div class="stat-icon thirst-icon">💧</div>
+            <div class="stat-bar-container">
+                <div class="stat-bar thirst-bar" id="thirst-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenedor de Calle (Solo visible en vehículo) -->
+    <div id="street-container">
+        <span id="street-name"></span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

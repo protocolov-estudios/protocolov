@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMapParentTxds>
+ <txdRelationships>
+  <Item>
+    <parent>ugase_city_textures_1</parent>
+    <child>ugase_city_textures</child>
+  </Item>
+  <Item>
+    <parent>ugase_city_textures_2</parent>
+    <child>ugase_city_textures_1</child>
+  </Item>
+  <Item>
+    <parent>ugase_city_textures_3</parent>
+    <child>ugase_city_textures_2</child>
+  </Item>
+  <Item>
+    <parent>ugase_city_textures_4</parent>
+    <child>ugase_city_textures_3</child>
+  </Item>
+  </txdRelationships>
+</CMapParentTxds>

@@ -1,0 +1,137 @@
+:root {
+  --bg: #071026;
+  --accent: #c7559a;
+  /* purple/pink */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: Inter, system-ui, Segoe UI, Roboto, Arial;
+  color: #fff;
+  background: transparent;
+}
+
+#app {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  opacity: 1;
+  transition: opacity 0.5s ease-out;
+  background: var(--bg);
+}
+
+#app.hidden {
+  opacity: 0;
+  pointer-events: none;
+  display: none;
+}
+
+#app.fade-out {
+  animation: fadeOut 1s ease-out forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, #001226 0%, #001833 40%, rgba(0, 0, 0, 0.6) 100%);
+  filter: blur(6px);
+  z-index: 0;
+}
+
+.container {
+  position: relative;
+  width: 95%;
+  max-width: 1400px;
+  height: 90%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 40px;
+  z-index: 1;
+}
+
+.left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 800px;
+}
+
+.right {
+  width: 320px;
+  text-align: right;
+}
+
+h1 {
+  font-size: 34px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #fff, #ffd6ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.progress-wrap {
+  height: 18px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.progress {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--accent), #6a3daf);
+  transition: width 250ms ease;
+}
+
+#subtitle {
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+#percent {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+/* Small screens */
+@media (max-width:900px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .right {
+    text-align: center;
+    width: 100%;
+  }
+}

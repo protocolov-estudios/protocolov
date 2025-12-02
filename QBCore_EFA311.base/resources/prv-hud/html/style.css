@@ -1,0 +1,200 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    overflow: hidden;
+}
+
+#hud-container {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding: 10px 25px;
+    background-color: #000000;
+    /* Fondo negro puro */
+    border-radius: 50px;
+    /* Bordes redondeados para la barra */
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+#hud-container.visible {
+    opacity: 1;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* Sin fondo individual, ahora son parte de la barra */
+    background: transparent;
+    border: none;
+    padding: 0;
+    box-shadow: none;
+    transition: all 0.3s ease;
+}
+
+#logo-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#logo {
+    width: 100px;
+    height: auto;
+}
+
+.stat-item:hover {
+    transform: scale(1.05);
+    border-color: transparent;
+    box-shadow: none;
+}
+
+.stat-icon {
+    font-size: 16px;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+}
+
+.stat-bar-container {
+    width: 100px;
+    /* Fixed width for the bar */
+    height: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.stat-bar {
+    height: 100%;
+    border-radius: 10px;
+    transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+}
+
+.stat-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), transparent);
+    border-radius: 10px 10px 0 0;
+}
+
+.health-bar {
+    background: linear-gradient(90deg, #ff4757, #ff6b81);
+}
+
+.armor-bar {
+    background: linear-gradient(90deg, #3742fa, #5f27cd);
+}
+
+.hunger-bar {
+    background: linear-gradient(90deg, #ffa502, #ff6348);
+}
+
+.thirst-bar {
+    background: linear-gradient(90deg, #1e90ff, #00d2ff);
+}
+
+/* Animación de entrada */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.stat-item {
+    animation: slideUp 0.5s ease forwards;
+}
+
+.stat-item:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.stat-item:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.stat-item:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.stat-item:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+/* Efecto de pulso */
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.stat-bar.pulse {
+    animation: pulse 0.3s ease;
+}
+
+/* Contenedor de la calle */
+#street-container {
+    position: absolute;
+    bottom: 250px;
+    /* Ajustado para estar encima del minimapa */
+    left: 40px;
+    /* Alineado a la izquierda */
+    background: rgba(0, 0, 0, 0.7);
+    padding: 8px 15px;
+    border-radius: 8px;
+    border-left: 4px solid #3498db;
+    /* Acento azul */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+#street-container.visible {
+    opacity: 1;
+}
+
+#street-name {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+}
